@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://cdn.tailwindcss.com"></script>
+        <script defer src="./dropdown.js"></script>
+        <script defer src="../prev-button.js"></script>
+
+        <title>Document</title>
+
+        <style>
+            .start {
+                height: 100vh;
+            }
+
+            .video {
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .home {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 700px;
+                height: 700px;
+            }
+
+            .img1 {
+                position: absolute;
+                top: 45%;
+                left: 27%;
+                height: 200px;
+                width: 300px;
+                filter: blur(5px);
+                transform: rotate(-10deg);
+            }
+
+            .img2 {
+                position: absolute;
+                top: 40%;
+                left: 137%;
+                height: 200px;
+                width: 300px;
+                filter: blur(5px);
+                transform: rotate(10deg);
+            }
+
+            .img3 {
+                position: absolute;
+                top: 10%;
+                left: 80%;
+                height: 300px;
+                width: 300px;
+            }
+
+            .img1:hover {
+                animation-name: action1;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+            }
+
+            .img2:hover {
+                animation-name: action1;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+            }
+
+            @keyframes action1 {
+                from {
+                    border: 5px solid greenyellow;
+                }
+
+                to {
+                    border: 5px solid palevioletred;
+                    transform: rotate(0deg);
+                    filter: blur(0);
+                }
+            }
+
+            .img4 {
+                width: max-content;
+                height: max-content;
+            }
+
+            .pic {
+                background-image: url("https://img.freepik.com/free-vector/arcade-game-world-pixel-scene_24640-45858.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697846400&semt=ais");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .head {
+                height: 420px;
+            }
+
+            .footer {
+                text-align: center;
+            }
+
+            .a {
+                background-color: rgb(255, 255, 255);
+            }
+
+            .p {
+                font-size: 30px;
+                font-family: monospace;
+            }
+
+            .his01 {
+                width: 30%;
+                height: 30%;
+            }
+
+            .his {
+                font-size: 30px;
+                background-color: #d6cac1;
+                color: #83a4db;
+            }
+
+            .his02 {
+                position: relative;
+                width: 300px;
+                height: 400px;
+                left: 100px;
+            }
+
+            .overhis02 {
+                left: 0px;
+                width: 300px;
+                height: 400px;
+                bottom: 0px;
+                position: absolute;
+                font-size: 30px;
+                text-align: center;
+                background-color: burlywood;
+                color: #90addc;
+                overflow: hidden;
+                transition: height 0.4s;
+            }
+
+            .his02:hover .overhis02 {
+                height: 40px;
+            }
+
+            .firststation {
+                transform: rotate(-20deg);
+                font-size: 70px;
+                background-color: #e7b989;
+                width: fit-content;
+                margin-left: -350px;
+            }
+
+            .wu {
+                background-color: #e0d5ca;
+                width: 800px;
+                position: relative;
+                left: 500px;
+                top: -300px;
+            }
+
+            .his08 {
+                margin-left: 1000px;
+            }
+
+            .his081 {
+                margin-left: 500px;
+                margin-top: -200px;
+                background-color: #e0d5ca;
+                width: 400px;
+            }
+
+            .snake {
+                background-color: #a6baaf;
+                color: #dfe5ed;
+            }
+
+            .second {
+                font-size: 70px;
+            }
+
+            .snake2,
+            .snake5 {
+                margin-left: 150px;
+                margin-top: 30px;
+                width: 25%;
+            }
+
+            .snake3,
+            .snake101 {
+                margin-left: 1000px;
+                margin-top: 30px;
+                width: 25%;
+            }
+
+            .snake02,
+            .snake05 {
+                width: 700px;
+                position: absolute;
+                margin-left: 650px;
+                font-size: 30px;
+                margin-top: -320px;
+                background-color: cadetblue;
+            }
+
+            .snake03,
+            .snake10 {
+                width: 700px;
+                position: absolute;
+                margin-left: 200px;
+                font-size: 30px;
+                margin-top: -320px;
+                background-color: cadetblue;
+            }
+
+            .snake06,
+            .snake08 {
+                width: fit-content;
+                background-color: cadetblue;
+                font-size: 30px;
+            }
+
+            .snake12 {
+                width: 1300px;
+                background-color: cadetblue;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .rare {
+                background-color: #b2a060;
+                color: #e0d5ca;
+            }
+
+            .rare01 {
+                position: relative;
+                width: 600px;
+                height: 700px;
+            }
+
+            .overrare01 {
+                left: 0px;
+                width: 600px;
+                height: 700px;
+                bottom: 0px;
+                position: absolute;
+                font-size: 100px;
+                text-align: center;
+                background-color: burlywood;
+                color: #90addc;
+                overflow: hidden;
+                transition: height 1s;
+            }
+
+            .rare01:hover .overrare01 {
+                height: 120px;
+            }
+
+            .rare03 {
+                width: 1300px;
+                background-color: cadetblue;
+                font-size: 30px;
+            }
+
+            .rare08,
+            .rare09 {
+                position: relative;
+                width: 300px;
+                height: 400px;
+            }
+
+            .MDT {
+                background-color: #83a4db;
+                font-size: 70px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-sky-400">
+            <header class="flex justify-between p-4 max-w-7xl m-auto">
+                <div>
+                    <h1>
+                        <a href="../index.html" class="text-xl font-bold"> Annice. </a>
+                    </h1>
+                </div>
+
+                <nav class="w-3/12">
+                    <ul class="flex font-medium justify-between">
+                        <li><a href="./museum/museum.html">Home</a></li>
+                        <li>
+                            <div id="dropdown" class="relative inline-block">
+                                <p class="cursor-pointer">Gallery</p>
+                                <div
+                                    id="dropdown-content"
+                                    class="hidden absolute bg-gray-100 min-w-[160px] shadow-md p-4 z-10 rounded-md -left-10">
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./history.html"
+                                        >History</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./snake.html"
+                                        >Snake</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./rare-species.html"
+                                        >Rare Species</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./mdt.html"
+                                        >MDT</a
+                                    >
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./photo.html">Photo</a>
+                        </li>
+                        <li>
+                            <a href="./location.html">Location</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="snake">
+            <div class="second">第二站🐍</div>
+            <br />
+            <center>
+                <img src="/images/snake01.png" width="{0}" height="{0}" class="w-1/2 h-1/2" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="snake12">
+                    蛇是一类无足的爬行动物，是蛇亚目（学名：Serpentes）的通称，属于爬行纲，是蜥蜴的一个演化支...
+                </div>
+            </center>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="/images/snake02.png" class="snake2" />
+            <div class="snake02">
+                黃環林蛇（學名：Boiga dendrophila）是林蛇屬的一種毒蛇，分佈於東南亞...
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="/images/snake03.png" class="snake3" />
+            <div class="snake03">
+                Boiga jaspidea俗称碧玉猫蛇，是一种后牙游蛇，在其分布范围内并不常见...
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="/images/snake05.png" class="snake5" />
+            <div class="snake05">
+                黑网乌梢蛇（学名：Zaocys carinatus）为游蛇科乌梢蛇属的爬行动物...
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="/images/snake10.png" class="snake101" />
+            <div class="snake10">眼鏡王蛇（學名：Ophiophagus hannah）是世上體型最長的毒蛇...</div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <center>
+                <img src="/images/snake06.png" class="snake11" />
+                <img src="/images/snake11.png" class="snake11" />
+                <img src="/images/snake07.png" class="snake11" />
+                <div class="snake06">蛇的骨头结构</div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="/images/snake08.png" class="snake09" />
+                <img src="/images/snake09.png" class="snake09" />
+                <br />
+                <div class="snake08">蛇的模型</div>
+            </center>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+        <footer class="text-center max-w-5xl mx-auto mt-10 p-5">
+            <div class="flex justify-between p-5">
+                <a
+                    id="prev-button"
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Previous
+                </a>
+                <a
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Next
+                </a>
+            </div>
+
+            <caption>
+                <p>S2S1 01 ANNICE SIAW ZHEN NING</p>
+                <p>
+                    本网站为学生课堂练习作品,若使用的内容有触犯了您的著作权请告知,我们将把它删除。
+                </p>
+                <p>Email:2019078@smpinhwa.edu.my</p>
+            </caption>
+        </footer>
+    </body>
+</html>

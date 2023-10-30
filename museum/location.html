@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://cdn.tailwindcss.com"></script>
+        <script defer src="./dropdown.js"></script>
+        <script defer src="../prev-button.js"></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="bg-sky-400">
+            <header class="flex justify-between p-4 max-w-7xl m-auto">
+                <div>
+                    <h1>
+                        <a href="../index.html" class="text-xl font-bold"> Annice. </a>
+                    </h1>
+                </div>
+
+                <nav class="w-3/12">
+                    <ul class="flex font-medium justify-between">
+                        <li><a href="./museum/museum.html">Home</a></li>
+                        <li>
+                            <div id="dropdown" class="relative inline-block">
+                                <p class="cursor-pointer">Gallery</p>
+                                <div
+                                    id="dropdown-content"
+                                    class="hidden absolute bg-gray-100 min-w-[160px] shadow-md p-4 z-10 rounded-md -left-10">
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./history.html"
+                                        >History</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./snake.html"
+                                        >Snake</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./rare-species.html"
+                                        >Rare Species</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./mdt.html"
+                                        >MDT</a
+                                    >
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./photo.html">Photo</a>
+                        </li>
+                        <li>
+                            <a href="./location.html">Location</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <main class="flex flex-col items-center h-[80vh] justify-center space-y-10">
+            <a
+                href="https://www.google.com/maps/place/Biomedical+Museum/@3.1683543,101.6987782,15z/data=!4m2!3m1!1s0x0:0x580d1ad36a1eb147?sa=X&ved=2ahUKEwjw-anHxpaCAxWOaN4KHZXdB2wQ_BJ6BAhJEAA&ved=2ahUKEwjw-anHxpaCAxWOaN4KHZXdB2wQ_BJ6BAhTEAg">
+                <img src="/images/location01.png" />
+            </a>
+            <a
+                href="https://imr.nih.gov.my/en/"
+                class="p-4 w-1/12 bg-slate-400 text-center rounded-lg font-medium text-white"
+                >More Information</a
+            >
+        </main>
+
+        <footer class="text-center max-w-5xl mx-auto mt-10 p-5">
+            <div class="flex justify-between p-5">
+                <a
+                    id="prev-button"
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Previous
+                </a>
+                <a
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Next
+                </a>
+            </div>
+
+            <caption>
+                <p>S2S1 01 ANNICE SIAW ZHEN NING</p>
+                <p>
+                    本网站为学生课堂练习作品,若使用的内容有触犯了您的著作权请告知,我们将把它删除。
+                </p>
+                <p>Email:2019078@smpinhwa.edu.my</p>
+            </caption>
+        </footer>
+    </body>
+</html>

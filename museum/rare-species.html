@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://cdn.tailwindcss.com"></script>
+        <script defer src="./dropdown.js"></script>
+        <script defer src="../prev-button.js"></script>
+
+        <title>Document</title>
+
+        <style>
+            .start {
+                height: 100vh;
+            }
+
+            .video {
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .home {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 700px;
+                height: 700px;
+            }
+
+            .img1 {
+                position: absolute;
+                top: 45%;
+                left: 27%;
+                height: 200px;
+                width: 300px;
+                filter: blur(5px);
+                transform: rotate(-10deg);
+            }
+
+            .img2 {
+                position: absolute;
+                top: 40%;
+                left: 137%;
+                height: 200px;
+                width: 300px;
+                filter: blur(5px);
+                transform: rotate(10deg);
+            }
+
+            .img3 {
+                position: absolute;
+                top: 10%;
+                left: 80%;
+                height: 300px;
+                width: 300px;
+            }
+
+            .img1:hover {
+                animation-name: action1;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+            }
+
+            .img2:hover {
+                animation-name: action1;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+            }
+
+            @keyframes action1 {
+                from {
+                    border: 5px solid greenyellow;
+                }
+
+                to {
+                    border: 5px solid palevioletred;
+                    transform: rotate(0deg);
+                    filter: blur(0);
+                }
+            }
+
+            .img4 {
+                width: max-content;
+                height: max-content;
+            }
+
+            .pic {
+                background-image: url("https://img.freepik.com/free-vector/arcade-game-world-pixel-scene_24640-45858.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697846400&semt=ais");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .head {
+                height: 420px;
+            }
+
+            .footer {
+                text-align: center;
+            }
+
+            .a {
+                background-color: rgb(255, 255, 255);
+            }
+
+            .p {
+                font-size: 30px;
+                font-family: monospace;
+            }
+
+            .his01 {
+                width: 30%;
+                height: 30%;
+            }
+
+            .his {
+                font-size: 30px;
+                background-color: #d6cac1;
+                color: #83a4db;
+            }
+
+            .his02 {
+                position: relative;
+                width: 300px;
+                height: 400px;
+                left: 100px;
+            }
+
+            .overhis02 {
+                left: 0px;
+                width: 300px;
+                height: 400px;
+                bottom: 0px;
+                position: absolute;
+                font-size: 30px;
+                text-align: center;
+                background-color: burlywood;
+                color: #90addc;
+                overflow: hidden;
+                transition: height 0.4s;
+            }
+
+            .his02:hover .overhis02 {
+                height: 40px;
+            }
+
+            .firststation {
+                transform: rotate(-20deg);
+                font-size: 70px;
+                background-color: #e7b989;
+                width: fit-content;
+                margin-left: -350px;
+            }
+
+            .wu {
+                background-color: #e0d5ca;
+                width: 800px;
+                position: relative;
+                left: 500px;
+                top: -300px;
+            }
+
+            .his08 {
+                margin-left: 1000px;
+            }
+
+            .his081 {
+                margin-left: 500px;
+                margin-top: -200px;
+                background-color: #e0d5ca;
+                width: 400px;
+            }
+
+            .snake {
+                background-color: #a6baaf;
+                color: #dfe5ed;
+            }
+
+            .second {
+                font-size: 70px;
+            }
+
+            .snake2,
+            .snake5 {
+                margin-left: 150px;
+                margin-top: 30px;
+                width: 25%;
+            }
+
+            .snake3,
+            .snake101 {
+                margin-left: 1000px;
+                margin-top: 30px;
+                width: 25%;
+            }
+
+            .snake02,
+            .snake05 {
+                width: 700px;
+                position: absolute;
+                margin-left: 650px;
+                font-size: 30px;
+                margin-top: -320px;
+                background-color: cadetblue;
+            }
+
+            .snake03,
+            .snake10 {
+                width: 700px;
+                position: absolute;
+                margin-left: 200px;
+                font-size: 30px;
+                margin-top: -320px;
+                background-color: cadetblue;
+            }
+
+            .snake06,
+            .snake08 {
+                width: fit-content;
+                background-color: cadetblue;
+                font-size: 30px;
+            }
+
+            .snake12 {
+                width: 1300px;
+                background-color: cadetblue;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .rare {
+                background-color: #b2a060;
+                color: #e0d5ca;
+            }
+
+            .rare01 {
+                position: relative;
+                width: 600px;
+                height: 700px;
+            }
+
+            .overrare01 {
+                left: 0px;
+                width: 600px;
+                height: 700px;
+                bottom: 0px;
+                position: absolute;
+                font-size: 100px;
+                text-align: center;
+                background-color: burlywood;
+                color: #90addc;
+                overflow: hidden;
+                transition: height 1s;
+            }
+
+            .rare01:hover .overrare01 {
+                height: 120px;
+            }
+
+            .rare03 {
+                width: 1300px;
+                background-color: cadetblue;
+                font-size: 30px;
+            }
+
+            .rare08,
+            .rare09 {
+                position: relative;
+                width: 300px;
+                height: 400px;
+            }
+
+            .MDT {
+                background-color: #83a4db;
+                font-size: 70px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg-sky-400">
+            <header class="flex justify-between p-4 max-w-7xl m-auto">
+                <div>
+                    <h1>
+                        <a href="../index.html" class="text-xl font-bold"> Annice. </a>
+                    </h1>
+                </div>
+
+                <nav class="w-3/12">
+                    <ul class="flex font-medium justify-between">
+                        <li><a href="./museum/museum.html">Home</a></li>
+                        <li>
+                            <div id="dropdown" class="relative inline-block">
+                                <p class="cursor-pointer">Gallery</p>
+                                <div
+                                    id="dropdown-content"
+                                    class="hidden absolute bg-gray-100 min-w-[160px] shadow-md p-4 z-10 rounded-md -left-10">
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./history.html"
+                                        >History</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./snake.html"
+                                        >Snake</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./rare-species.html"
+                                        >Rare Species</a
+                                    >
+                                    <a
+                                        class="cursor-pointer block hover:bg-gray-200 p-2 rounded-sm"
+                                        href="./mdt.html"
+                                        >MDT</a
+                                    >
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="./photo.html">Photo</a>
+                        </li>
+                        <li>
+                            <a href="./location.html">Location</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="rare">
+            <center>
+                <div>
+                    <br />
+                    <div class="rare01">
+                        <img src="/images/rare01.png" class="w-full h-full" alt="" />
+                        <div class="overrare01">第三站</div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <img src="/images/rare03.png" alt="" />
+                    <img src="/images/rare04.png" alt="" />
+                    <br />
+                    <div class="rare03">翼手目（翼翼亚目）是巨型蝙蝠的一个属...</div>
+                    <br />
+                    <br />
+                    <br />
+                    <img src="/images/rare05.png" alt="" />
+                    <img src="/images/rare06.png" alt="" />
+                    <img src="/images/rare07.png" alt="" />
+                    <img src="/images/rare09.png" alt="" />
+                    <div class="rare03">我没有找到这个是什么东东😭</div>
+                    <img src="rare10.png" alt="" />
+                    <div class="rare03">跟人对比的结果（感谢yongwei的贡献）</div>
+                    <br />
+                    <div class="rare08">
+                        <img src="/images/rare08.png" class="w-full h-full" alt="" />
+                    </div>
+
+                    <div class="rare09">
+                        <img
+                            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFRYYGBgZGBgYGBgYGBgYGBgYGBgZGRgYGBgcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QGhISGjEhGiE0NDQ0MTQ0NDQ0NDQ0MTQ0NDQ0NDQ0NDQ0MTQxNDQ0NDE0NDQ0NT80MTQxNDExMTQxNP/AABEIAO0A1QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgABB//EADUQAAEDAwMCBAQEBgMBAAAAAAEAAhEDBCEFEjFBUQYTImFxgZHwQqHB0QcUMrHh8RVSYiP/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EAB8RAQEBAQADAQEBAQEAAAAAAAABEQISITEDQVFhIv/aAAwDAQACEQMRAD8A+d1qhJVQcvJUSokT9FMerGvMqikxEAJH0a2lfHKhdHcg6VSFdvlPnlFDPYQotei3sQtRiqwRa12FW9y5gRDbbcg80CXlTZcFE1rCAl72EFLBmCPMUS9eMapFsJeJypseouVXmKbHylRiTW4RVtdFqiwBRqhI7y0NrqII5RHmgrLUp6JrZVtuXFHtPjDN+FXuQz7yXKwVAVzftzntnZhfqASbflP75mFn6jIcr/LuWK5o22qI01ZCAoU1e5pCXXPldViFR2VygSvFWDIVqTGSvIVjHLSdDVzVJrSV1NsoumxPVWqm0ivd0I5rQQqHslLyxAd1ZDvqqyuwIVtMk8p+VVFrK4lMbasO6Aqaa8CY/RBteQqnSsxoatYd0urOBKE88r1j050XQoKqo5XMZKtFBFtqNL20yUQy3KOpUgiBTCJwL0XtkBVufnKZGkFW629krzgnSqiFe5i9FKDjCKfbENlacyC6WPcQZV9vcFevpyq2shYftxsT9MXDcErubbPCZWz0RUpghcnNnNKeqV2bUzNtIQopwcJnbHC6ubLNFpLXtc8Lk6q0BK9VbD8mLrUlTsTF+UPUZCXi0wbp1KUwqW0JfYVoTl9QEKb6IE1qhVpE5C7zYcjqDgUeOkQ1WHqrLKmA8OKb19O3ZAQlza7SCnIrk6dWZsJMTCyF9RDSQM+/undMggl0n/q39Sl14wE4EI+NL1pQGou3prvIRFBsKojoVTZhePdC9a/svH2r3cNWk/4ic1ULiFeyvKFGkVCcloHxRVLTHjlzfqnnX+HeXpqwrGVwVF+nP6QfmhX272nLT/dLrZ/E+NMTlGip6IPZKKNY8FX+f0lKU5cTaJXj2KptWCrfMV9e4hKkjmPBCV74U2XS4uuZoHlkom3EIKjXlGeZhLevkVOdF4XqBFYrk/HoeLJUn5Cafyhc3hLbRoL2j3W7trQbPkunxrs/DL9YynZPBwJRtRjw3IK09natLoPdG6nYNDJgcInHlNL9Pyzr0+bVaklG2NyQRKE1FoDzCrovSnpz2ZW8094cArbyyY4cBZuwvnNEJu2/3DnKVhFd9b7MhJ3vlwWjvBIWYurZ2+WjhRz76Pm+zilZhzUO2yO6OiYac4tZ6kPc3s4C6Zzv10dzmyYk1jGZ690NW1A9EvrXRz0QL7lX6nxn8MH356L1t0eh/NKvMPyVzXxEH77IlB1RvHRz8UUy8d7JEyuFcy4VaRwHsfhwg9CFVcWRGRkdwgRUnvKYWd4Rh2Qo65lK8ylr5C4PIiU7uLVjsgwldzbndlZdSye2d5s+oteoEplZ2bXNmDK6607aA7p19lhm07xYGtnlH06iA2lj4+4KvpFXJglF7l6qthXIw9ZmhUhwPuvomkVtzB8F8/sKW4rYaQS0QtJ17afn3400/peCrtQrSwj2VNU8IW5qmICnyzY6uupZrHaxTgpXTfC0F/ZPfkBBUdAqO4RHH1tuq6F0jadznBQ13o76YkoG2B3BLu4mtZTqyModxAJKGol3ReXtfa2MZ5S/GbdHM/qu81EieyCqPc4SDIHv/fsk9xUK601DYciV0Xppomu53UZQu5OTtrslrS1w+B+vZKnUiCQUtKqmvyrPM+4RFnpr6rtrGlx+C3Wm/wANXOaC9+3uExj58KuVYysvplb+GtKcPP165/ZU0/4f0xAL5P7ff5o9hgaNc9CiKVQyvqmn+EbOmPWWkz+Ijk9EL4h8DUnMdUt3gFonaMh0c8KpoYW2uCSB14Ts0DIkT3wkNlav34xHTPK1dBg25cQeij9L6Lq+kLYsZzj2S7Ur4OBaOETcuJ5PzSq4prn3EedVj1FF0qaGotymtNmETrV8yf1bRpYXLm1IwvVWtc5ZXSOQtdSAAlY7SjBT51zA5RfrDNGvvM8qbblsZSCtUMyg6ldxxKy6lraXIeXmpMHVW6VrNOYJWYNuXc5VbqJar4/8pt1t9au2PYYjhZa0tRMoUVXHEptYU3AbuIT63r1EX2IHoGBlZjVLklx6dwU61LUYluCe6z9eoHnK255vPOLnqAXvlDvCJcwdFS6mRyjCe29y5jg5vIWkY1tQNeDl3PseqzActdo7w+m3aANpz8fdLcONzoFFlpQ80tl0SSYz2ykGveNaz3QwlojhuPqmurkuszA4LSY7LCullQO2tqSAdjmh0jrAIIP0xKryFixvie5By53PUpkfEdVzQZdOQc8yM/JB/wAs19L1MLCC6JgHbH9IbgnMR2THStM9G08wCD2kHHsjnyplD9RuahLgXQDtnJE8hpPE+3PHstb4D1yqXmk8kiHYk4I7fssi7T3sdt3wN0kbXE/LETnutd4SozWe+P6abpPxLQJPcwSnNCF3SaypUI43GPicoY3BhHavTgE9SZQdG3O0FLrnyrLqewTrgzlFUnBwyqbq1IzCDFwWGCsO+MThn5I6K0OhD29wHItzZCjn0W2BKtzlcqK1EyuT1fkUt9PCKtmlyk+0ym9jagBaWtPzmg6tvASK7qbXLXXLMLKarSyjxX1Bdg8OTI2W7gJVolMkwtawtbARz+VtReSqnpoZ6nc9kBe38A7ThMdVuBEf2WRvKpkroyczBmKL6vuP3+SDc4og1I5H9lS4E5UUOAPRc8fNefl99FwcgkdndGaXdeW6fwnlBz3UwOyLBH2PQLhlSntwWvBz94WU1nS3U3uaWb2ziW9ieCkvh7WXUHcnb1Hb5L6TY3rLlm6QdomDMk9OOiWKYa2s3yDs2jp75zC0ek0iXgYnsew6oW8uRuJPPHER8OyUVbp7HipSM8bmGcj/AM/srnr2GsvPDorE7H7XRx0MdE10nSW0KZYJLnQXuOOBgAdv8pBZ6w9zmGNsQffpgn6rf3fqY14gFzQfqJTs/pRiPEDYH6ffRKLa6gQjfEd2ZLD27JCxymdTWfV9mle4kdEluiDPxVj3oGu8qO6Ue29bafZOLe9HdZvcV62uQufqH1JY0NW4ErkhF0V6kjGirRKvt63RJ33WYKJt6mVo6fx+HMSFntTpSYT1lWGpVUaHvytOZvpp18XafbCm2SZJ9lZXuQByobh3OEt1G4XRJkZA766ngz+yV1GfZV739VQ5wHJ+/ZZ0Kns7qG+VJ9TsMKstSJzmqtynPpUBhMkArGrwMyvYUhZTT3RdZfQPpyD3yEhaURT9kacaO8ql5Lz+KCQ0xGOnzhB0rgj+lh+bsfSFTZ1iPTOCtVp+nMfBPTMCOOyV6wYq8N0qtSq1rWsaC4ZDZ2gGSRJxhfUNVqNbTgmIEA9cBK9HbTojAa2Rk/Duf0WQ8U+It79jDgFV5eitwu1F5c8yZgnIyOeirYxU0XEiV695aon+svtW1KYVBoAql90oNu4WfVtPFr7MIG4tYTBl0CqbmoCstokpRBXJvRotAzyVy08WngvuaTTlRtzGElo6iYgoqjdKsuH+VynNS4gQq6LSAXFANqyQibmqQIC0/Pn+1p11rytdQOUouK8n917cvPdDuhaWs6hUeqYGP1VrgEO8qQsc0KB4Ud/+l7uQEZXQvSFaWjoglIHC9e5dGVLag3MCvptQ7mdQr2PKQgtphMrC7LfxHtCTMd7oilUj9kqbQV7t7m/1mPilDh6kxoPBb94QtyyFjdlY3dGWJRFzSBCU211BTNtcEI8rE0nuGQUKjb94S8PTl1pykHkI6wZuO48BA0mFxgJs+GMDR80TlpzzqNepJXIKrVyuVr14dJcBIVDqTmr6SNJgQRBSu90UE8JS/wCuedMvp7O6tvHz0JTxunBjeEou6Bccrbn40l9FVSff2VBf2RdyyPkgnz1QEHmVS4rnFeEhSHb89gF66pPH1VLgu3d0EsBVjQVSHxwvfMcnoWk5Vren5obd3U2n/aDTNQdlxIPCr+AUuspBdPt/lTY/KpB7q9lTpCDMtOuPVBJRN01LKFQB3p47lMLip6ZU9c77T1z/AEseYKsZdEDlUVnoR5WdkZiLi5lV03ShimemWT3OB2u2zzBz8FUjXmejOwphjd556Ia4q7jKYahaVQ2fLeG8SWOH6JaKD2iS1w+IKrF/JikuK5X/AMvUP4HfQ9VySX2p7Q7Due6Ar20HITN9NRfBEO+RRI59Zy9t8cLPXNnytnXoylNzbK58VKw95agcBJ7igVtL209khu7ZFqtZh4hVpjcW/VAuZlBoKBKtj8gqigO3QvWPUHLpSAsAKbXCOiFJVwjCaloB6KbPyVbH/FduCDXtdGFBzxxH0UHu+a865CQEMdge6PpeppHtiErHKMtqu0pgx0Lw1WuXw0bWDl7sD5d19Bs/4fWTGjzXOecSd20T1wFn9G1xzYb0jondbWZbjtzlEnMKcjX6bpVuQfJZuHG71H6Er2v4yos/opNkAjIDYA6BfLNX1R7qhdunPI4HsEHWvnu6kk9/3Rp+n0rUP4hEYAaCR24SSp48fIaxhqOcfS3bJk8AADPyWIp2znuG4jbOTMY6wYOfkVrtJqWNFzHse4P98lvOJcCG/LuidbcJVdeKdQc6RTqAdvKdj8ly1f8AytKr6hXqMAwNu31e8kZH+V6n7Nu30kPUoo8tUHMUucpqUkBXpJ5VppfcU09DOXdFIb22WtuaaT3dBI5WNu7eAUiuacFbK+tD2SC+snf9URcpI49FUWoh1u8ctVbmpqUEKKsIUXBIOacq4dkMr2H+yBFrG8SrRTEqoOV7H9UHHNZ9VIieemFLbweq9DfdBqz9leNcpPMIcuTB3YV+gKZfzJiHPkdu4WbtnkIrzDGCjA4H1OO0CTIBzCq2Q7ofYzH5EKwHqpP2x98plgm1eyIgFxkCcMYI5M8nsEc3X2O9FxQY9kQHbfVjHJxznHCTOoYM/fxQNJp3BjnANnl3Cjx8bsNtdNtrZ7SW+awTgbiQR3EzjlcqLOjUDf8A5Vw5veB+y9T8/wDhY+2lRKq81cHoYPKgQNZqOc5CvbKWguqUJQzrGU5bTVjaKZM8/SweiGq6ID0WuFAKX8sFUh6+f1/DYP4UruvCw7L6m60HZUvsR2Tw9fFb3wuRwEiutHe3pK+9V9KB6JReaC09EYryfC6tFwOQQosX1XUPDAM4WWv/AAyW8BTeVTpmyFaHYV1Sxe2QQhnCClVQQ49lNiHarWeyDeVAqTCMdkKkUjMwgPGOhXOdAXgprxzY6oCL6kkK+nk5Q7eqmHhMDA//AGq67N2IVTamcfREu95CYDbHtwCQPquV0lcpwPvTXqQegvNUm1lFrHBhcuaEO2ormPUXoYva1WsCpa5WB6c6LBDQphC+auFwFrOkjFxahhcKX8wrlJY6mqX24XpuFB1yEzC17UJHf2bc4T6rcBKb2qEKjIXumgnAWS1XThJIBELcaldBoJCxOp3Jc7JUda0hC9haYVjCvbh6qa9JUGgKZbAVLHr11TBQpN7vdDVCDyVF71XCZO3e6m73VcKTXzHWEAxs7cYKaOptjMIC1dC9uqnZPTRqMzhcqmucVyWwPqY1EKTdRHdYOpfOlE2925YdVHi3dO9nqiqdyshQrnCaW9YwopeLTMuFF91CUU65VNxXKUK8nD70Id2ogdVmKt44JVd6k8Fbc1N5bv8A5Qd14dXHdfNKmsv+yqTrD/srSUeL6e/WB3Q1XXGjqvmDtXqd/wA0NX1J8cq9E5fR7nxG0fiSG+8VAdVh33LiclUv5Rqsxpr3X94SercShmDEKsCUWKdVeTwvZMZUwIUHlTQm16mXSEK0qbSkerN65hwqnFduQNePq5EK+j3QvZH0zhMRex56ogiR37oVxV9vnlJUcDC5SqDK5Bv/2Q=="
+                            alt="" />
+                    </div>
+                </div>
+            </center>
+        </div>
+
+        <footer class="text-center max-w-5xl mx-auto mt-10 p-5">
+            <div class="flex justify-between p-5">
+                <a
+                    id="prev-button"
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Previous
+                </a>
+                <a
+                    class="cursor-pointer px-3 py-1 rounded-lg border-2 border-black border-solid hover:bg-gray-200 font-medium">
+                    Next
+                </a>
+            </div>
+
+            <caption>
+                <p>S2S1 01 ANNICE SIAW ZHEN NING</p>
+                <p>
+                    本网站为学生课堂练习作品,若使用的内容有触犯了您的著作权请告知,我们将把它删除。
+                </p>
+                <p>Email:2019078@smpinhwa.edu.my</p>
+            </caption>
+        </footer>
+    </body>
+</html>

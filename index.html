@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Annice | 一日游</title>
+
+        <style>
+            video {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        </style>
+
+        <script defer src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script defer src="app.js"></script>
+        <script defer src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <header class="flex justify-around p-4 bg-sky-400">
+            <div>
+                <h1>
+                    <a href="./index.html" class="text-xl font-bold"> Annice. </a>
+                </h1>
+            </div>
+
+            <nav class="w-3/12">
+                <ul class="flex gap-10 font-medium">
+                    <li><a href="./museum/museum.html">Biomedical Museum</a></li>
+                    <li>
+                        <a href="./pusat-sains/pusat-sains-negara.html">Pusat Sains Negara</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="flex justify-center items-center space-x-24 h-[60vh]">
+            <section>
+                <div class="space-y-32 w-80 h-72 text-3xl font-semibold">
+                    <span id="app"></span>
+                </div>
+                <div>
+                    <button
+                        class="p-4 bg-rose-500 w-1/2 text-white text-xl font-semibold rounded-lg">
+                        <a href="./museum/museum.html">Start Now!</a>
+                    </button>
+                </div>
+            </section>
+
+            <figure>
+                <image src="/images/mario.webp" alt="Mario with sky background" class="w-96" />
+            </figure>
+        </main>
+
+        <video autoplay loop>
+            <source src="/videos/bg_video.mp4" />
+        </video>
+
+        <footer class="text-center max-w-5xl mx-auto mt-20 p-5">
+            <caption>
+                <p>S2S1 01 ANNICE SIAW ZHEN NING</p>
+                <p>
+                    本网站为学生课堂练习作品,若使用的内容有触犯了您的著作权请告知,我们将把它删除。
+                </p>
+                <p>Email:2019078@smpinhwa.edu.my</p>
+            </caption>
+        </footer>
+    </body>
+</html>
